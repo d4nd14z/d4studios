@@ -15,6 +15,7 @@ class CommentInline(admin.TabularInline):
 class PostAdmin(admin.ModelAdmin):
     list_display = ['id', 'title', 'author', 'published', 'created_at']
     list_display_links = ['title']
+    filter_horizontal = ['category'] 
     inlines = [CommentInline]
     ordering = ['id']
 
